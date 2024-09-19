@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch tuần Công ty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            padding: 20px;
+        }
+        .week-info {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+		.week-info h2, p {
+			margin: 5px 0px 10px 0px;
+		}
+        .day {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #3498db;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .day h3 {
+            margin: 0 0 10px;
+            color: #2c3e50;
+        }
+        .day-icon {
+            font-size: 18px;
+            margin-right: 10px;
+            color: #e74c3c;
+        }
+        .morning, .afternoon {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .morning .icon, .afternoon .icon {
+            font-size: 18px;
+            margin-right: 10px;
+            color: #27ae60;
+        }
+        #last-updated {
+            text-align: center;
+			font-size: 10px;
+            /* margin-top: 20px;
+            color: #555;*/
+        }
+		#week-date {
+			font-size: 12px;
+        }
+        .input-controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-controls select {
+            padding: 8px;
+            font-size: 16px;
+            margin: 0 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            max-width: 100px;
+        }
+        .input-controls button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="week-info">
+        <h2 id="week-title"></h2>
+		<p id="week-date"></p>
+		<p id="last-updated"></p>
+    </div>
+
+    <div id="schedule"></div>
+
+    <div class="week-info">
+        <p id="content"></p>
+    </div>
+
+    <!-- Thêm các thẻ select để chọn tuần, năm và phòng -->
+    <div class="input-controls">
+        <label for="week-select">Tuần: </label>
+        <select id="week-select"></select>
+        
+        <label for="year-select">Năm: </label>
+        <select id="year-select"></select>
+        
+        <!-- <label for="maphong-select">Phòng: </label> -->
+        <select id="maphong-select">
+            <option value="coquan" selected>Cơ quan</option>
+            <option value="bangd">BAN TGĐ</option>
+            <option value="ktbt">KTBT</option>
+            <option value="kttc">KTTC</option>
+            <option value="sxkv">SXKV</option>
+            <option value="sxph">KHPH</option>
+            <option value="tchc">TCHC</option>
+            <option value="mkt">Marketing</option>
+        </select>
+        
+        <button id="fetch-button">✔</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
