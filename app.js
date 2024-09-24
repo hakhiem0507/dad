@@ -1,5 +1,5 @@
 // URL API cơ bản
-const baseUrl = 'https://hakhiem.cf/api/dadcal.php';
+const baseUrl = 'https://hakhiem.cf/dad/dadcal.php';
 
 // Lấy tuần hiện tại
 function getCurrentWeek() {
@@ -89,11 +89,11 @@ function displaySchedule(data) {
 
         const morningDiv = document.createElement('p');
         morningDiv.className = 'morning';
-        morningDiv.innerHTML = `<span class="icon">☀️</span> Buổi sáng: ${dayInfo.morning || ''}`;
+        morningDiv.innerHTML = `<span class="icon">☀️</span> ${dayInfo.morning || ''}`; //Buổi sáng: 
 
         const afternoonDiv = document.createElement('p');
         afternoonDiv.className = 'afternoon';
-        afternoonDiv.innerHTML = `<span class="icon">🌙</span> Buổi chiều: ${dayInfo.afternoon || ''}`;
+        afternoonDiv.innerHTML = `<span class="icon">🌙</span> ${dayInfo.afternoon || ''}`; //Buổi chiều: 
 
         // Thêm các phần tử vào thẻ div của ngày
         dayDiv.appendChild(dayTitle);
